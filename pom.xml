@@ -12,13 +12,31 @@
 	<artifactId>robot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>robot</name>
+	<packaging>pom</packaging>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	<modules>
+		<module>robot-model</module>
+		<module>robot-repository</module>
+		<module>robot-service</module>
+		<module>robot-system</module>
+	</modules>
 
 	<dependencies>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

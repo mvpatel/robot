@@ -1,5 +1,35 @@
 package com.share.investment.service.impl;
 
 
-public class SentimentAnalysisImpl {
+import com.share.investment.model.dao.SentimentAnalysis;
+import com.share.investment.service.SentimentAnalysisService;
+
+import java.util.List;
+
+public class SentimentAnalysisImpl implements SentimentAnalysisService {
+
+    @Override
+    public SentimentAnalysis addSentimentAnalysis(Long tweetId, byte score) {
+        return null;
+    }
+
+    @Override
+    public SentimentAnalysis updateAnalysis(Long sentimentAnalysisId, Long tweetId, byte score) {
+        return null;
+    }
+
+    @Override
+    public List<SentimentAnalysis> listSentimentAnalysis() {
+        return null;
+    }
+
+    @Override
+    public List<SentimentAnalysis> listSentimentAnalysisBySentimentAnalysisId(Long sentimentAnalysisId) {
+        return null;
+    }
+
+    @Override
+    public List<SentimentAnalysis> listSentimentAnalysisByTweetId(Long tweetId) {
+        return null;
+    }
 }

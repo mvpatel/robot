@@ -12,7 +12,7 @@ public interface ShareService {
      * It will be used to add Share
      * @return
      */
-    Share addShare(String shareName, String companyName);
+    void addShare(String shareName, String companyName);
 
     /**
      * It will be used to update share by given parameters.
