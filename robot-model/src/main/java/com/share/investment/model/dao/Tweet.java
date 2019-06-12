@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @Table(
         name = "tweet"
 )
-
 @Data
 @Entity
 public class Tweet {
@@ -25,26 +24,18 @@ public class Tweet {
     private Long tweetId;
 
     @Column(
-            name = "userId",
             unique = true,
             nullable = false
     )
     private Long userId;
 
-    @Column(
-            name = "tweet"
-    )
     private String tweet;
 
     @Column(
-            name = "shareId",
             unique = true,
             nullable = false
     )
     private Long shareId;
 
-    @Column(
-            name = "dateTime"
-    )
     private LocalDateTime dateTime;
 }

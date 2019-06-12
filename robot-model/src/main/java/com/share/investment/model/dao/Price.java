@@ -24,19 +24,12 @@ public class Price {
     private Long priceId;
 
     @Column(
-            name = "shareId",
             unique = true,
             nullable = false
     )
     private Long shareId;
 
-    @Column(
-            name = "price"
-    )
     private BigDecimal price;
 
-    @Column(
-            name = "dateTime"
-    )
     private LocalDateTime dateTime;
 }

@@ -25,21 +25,16 @@ public class Profit {
     private Long profitId;
 
     @Column(
-            name = "investmentId",
             unique = true,
             nullable = false
     )
     private Long investmentId;
 
     @Column(
-            name = "profit",
             nullable = false
     )
     private BigDecimal profit;
 
-    @Column(
-            name = "dateTime"
-    )
     private LocalDateTime dateTime;
 
 }

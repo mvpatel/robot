@@ -25,14 +25,12 @@ public class Share {
 
 
     @Column(
-            name = "shareName",
             unique = true,
             nullable = false
     )
     private String shareName;
 
     @Column(
-            name = "companyName",
             unique = true,
             nullable = false
     )
