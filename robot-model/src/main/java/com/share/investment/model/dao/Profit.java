@@ -36,4 +36,5 @@ public class Profit {
             name = "dateTime"
     )
     private LocalDateTime dateTime;
+
 }
