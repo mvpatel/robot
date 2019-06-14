@@ -12,9 +12,19 @@ public class SystemController {
 
 
 
-    public void addShare() {
+    public void testing() {
+        //todo remove
+        System.out.println("Testing Method from SystemController.java Start");
+
         System.out.println("hi333");
-        shareService.addShare("Test312", "Test412");
+//        shareService.addShare("sharename1121", "companyname1211");
+        shareService.listShare();
+        shareService.listShareByShareId(1L);
+        shareService.updateShare(10L, "shareName23", "companyname23");
+//        shareService.deleteShare(27L);
+
+//        todo remove
+        System.out.println("Testing Method from SystemController.java End");
 
     }
 }

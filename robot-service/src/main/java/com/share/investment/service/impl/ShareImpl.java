@@ -25,16 +25,29 @@ public class ShareImpl implements ShareService {
 
     @Override
     public Share updateShare(Long shareId, String shareName, String companyName) {
-        return null;
+        Share share = shareRepository.findOne(shareId);
+        share.setShareName(shareName);
+        share.setCompanyName(companyName);
+        shareRepository.save(share);
+        return share;
     }
 
     @Override
     public List<Share> listShare() {
-        return null;
+
+        return shareRepository.findAll();
+
     }
 
     @Override
-    public List<Share> listShareByShareId(Long shareId) {
-        return null;
+    public Share listShareByShareId(Long shareId) {
+
+        return shareRepository.findOne(shareId);
+    }
+
+    @Override
+    public void deleteShare(Long shareId) {
+
+        shareRepository.delete(shareId);
     }
 }

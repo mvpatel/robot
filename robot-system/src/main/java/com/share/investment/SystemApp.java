@@ -24,7 +24,7 @@ public class SystemApp {
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
             SystemController systemController = ctx.getBean("systemController",SystemController.class);
-            systemController.addShare();
+            systemController.testing();
         };
 
     }

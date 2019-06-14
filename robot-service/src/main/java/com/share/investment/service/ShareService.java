@@ -28,7 +28,11 @@ public interface ShareService {
      * It will be used to list all shares by shareId
      * @return
      */
-    List<Share> listShareByShareId(Long shareId);
+    Share listShareByShareId(Long shareId);
 
-
+    /**
+     * Delete Share by shareID
+     * @return
+     */
+    void deleteShare(Long shareId);
 }
