@@ -6,7 +6,7 @@ import com.share.investment.service.ProfitService;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class ProfitImpl implements ProfitService {
+public class ProfitServiceImpl implements ProfitService {
 
     @Override
     public Profit addProfit(Long investmentId, BigDecimal profit) {

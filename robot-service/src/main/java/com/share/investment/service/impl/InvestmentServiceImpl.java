@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class InvestmentImpl implements InvestmentService {
+public class InvestmentServiceImpl implements InvestmentService {
 
     @Override
     public Investment addInvestment(Long shareId, byte buySell, BigDecimal startPrice, BigDecimal closePrice, LocalDateTime startDateTime, LocalDateTime closeDateTime, byte live, byte startSentimentAnalysisScore, byte endSentimentAnalysisScore) {

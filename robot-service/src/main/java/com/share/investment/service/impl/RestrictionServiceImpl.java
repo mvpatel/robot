@@ -5,7 +5,7 @@ import com.share.investment.service.RestrictionService;
 
 import java.util.List;
 
-public class RestrictionImpl implements RestrictionService {
+public class RestrictionServiceImpl implements RestrictionService {
 
     @Override
     public Restriction addRestriction(Long shareId, byte startSentimentAnalysisVal, byte closeSentimentAnalysisVal, byte maxLoss, byte maxProfit) {

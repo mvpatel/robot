@@ -11979,4 +11979,7 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExce
 ""14-06-2019 18:57:09 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
 ""14-06-2019 18:57:09 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8083 (http)
 ""14-06-2019 18:57:09 [main] INFO  com.share.investment.SystemApp - Started SystemApp in 8.417 seconds (JVM running for 9.34)
+""14-06-2019 19:04:23 [Thread-5] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@471a9022: startup date [Fri Jun 14 18:57:02 BST 2019]; root of context hierarchy
+""14-06-2019 19:04:23 [Thread-5] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+""14-06-2019 19:04:23 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 "

@@ -6,7 +6,7 @@ import com.share.investment.service.SentimentAnalysisService;
 
 import java.util.List;
 
-public class SentimentAnalysisImpl implements SentimentAnalysisService {
+public class SentimentServiceAnalysisImpl implements SentimentAnalysisService {
 
     @Override
     public SentimentAnalysis addSentimentAnalysis(Long tweetId, byte score) {

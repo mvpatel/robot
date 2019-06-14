@@ -6,7 +6,7 @@ import com.share.investment.service.PriceService;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class PriceImpl implements PriceService {
+public class PriceServiceImpl implements PriceService {
 
     @Override
     public Price addPrice(Long shareId, BigDecimal price) {

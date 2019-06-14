@@ -5,7 +5,7 @@ import com.share.investment.service.TweetService;
 
 import java.util.List;
 
-public class TweetImpl implements TweetService {
+public class TweetServiceImpl implements TweetService {
 
     @Override
     public Tweet addTweet(Long userId, String tweet, Long shareId) {
