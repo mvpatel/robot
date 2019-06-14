@@ -6,18 +6,15 @@
     <parent>
         <groupId>com.share.investment</groupId>
         <artifactId>robot</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>com.share.investment</groupId>
     <artifactId>robot-repository</artifactId>
-    <name>robot-repository</name>
 
     <dependencies>
         <dependency>
             <groupId>com.share.investment</groupId>
             <artifactId>robot-model</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>

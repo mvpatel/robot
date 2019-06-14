@@ -7,23 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class ShareImpl implements ShareService {
 
-    private final ShareRepository shareRepository;
-
     @Autowired
-    public ShareImpl(final ShareRepository shareRepository) {
-        this.shareRepository = shareRepository;
-    }
+    private  ShareRepository shareRepository;
 
     @Override
-    public void addShare(String shareName, String companyName) {
+    public Share addShare(String shareName, String companyName) {
         Share share = new Share();
         share.setShareName(shareName);
         share.setCompanyName(companyName);
         shareRepository.save(share);
-//        return null;
+        return share;
     }
 
     @Override

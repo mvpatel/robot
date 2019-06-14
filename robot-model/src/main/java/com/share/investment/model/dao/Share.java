@@ -1,6 +1,5 @@
 package com.share.investment.model.dao;
 
-import lombok.Data;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -13,10 +12,8 @@ import javax.persistence.Table;
 @Table(
         name = "share"
 )
-
-@Data
-@Setter
 @Entity
+@Setter
 public class Share {
 
     @Id
@@ -37,16 +34,4 @@ public class Share {
             nullable = false
     )
     private String companyName;
-
-    public void setShareId(Long shareId) {
-        this.shareId = shareId;
-    }
-
-    public void setShareName(String shareName) {
-        this.shareName = shareName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
 }

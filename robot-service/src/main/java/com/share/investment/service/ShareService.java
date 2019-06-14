@@ -1,18 +1,16 @@
 package com.share.investment.service;
 
 import com.share.investment.model.dao.Share;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface ShareService {
 
     /**
      * It will be used to add Share
      * @return
      */
-    void addShare(String shareName, String companyName);
+    Share addShare(String shareName, String companyName);
 
     /**
      * It will be used to update share by given parameters.

@@ -1,6 +1,5 @@
 package com.share.investment.model.dao;
 
-import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +12,6 @@ import java.time.LocalDateTime;
 @Table(
         name = "tweet"
 )
-@Data
 @Entity
 public class Tweet {
 
