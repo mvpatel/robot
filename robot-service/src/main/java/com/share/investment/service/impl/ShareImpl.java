@@ -40,7 +40,7 @@ public class ShareImpl implements ShareService {
     }
 
     @Override
-    public Share listShareByShareId(Long shareId) {
+    public Share getShareByShareId(Long shareId) {
 
         return shareRepository.findOne(shareId);
     }
