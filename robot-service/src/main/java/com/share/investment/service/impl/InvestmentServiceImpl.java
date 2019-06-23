@@ -7,6 +7,7 @@ import com.share.investment.repository.InvestmentRepository;
 import com.share.investment.repository.ShareRepository;
 import com.share.investment.service.InvestmentService;
 import com.share.investment.service.PriceService;
+import com.share.investment.service.ProfitService;
 import com.share.investment.service.ShareService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,9 @@ public class InvestmentServiceImpl implements InvestmentService {
     @Autowired
     ShareRepository shareRepository;
 
+    @Autowired
+    ProfitService profitService;
+
     @Override
     public Investment startInvestment(Long shareId) {
 
@@ -54,10 +58,11 @@ public class InvestmentServiceImpl implements InvestmentService {
         Investment investment = investmentService.getInvestmentByInvestmentId(investmentId);
         Price price = investment.getShare().getPrice();
         investment.setClosePrice(price.getPrice());
-        investment.setLive((byte) 1);
+        investment.setLive((byte) 0);
         investment.setEndSentimentAnalysisScore((byte) 50);
         investment.setCloseDateTime(Calendar.getInstance());
         investmentRepository.save(investment);
+        profitService.addProfit(investment );
         return investment;
     }
 

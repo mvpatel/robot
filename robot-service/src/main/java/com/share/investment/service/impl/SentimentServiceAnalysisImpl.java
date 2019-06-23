@@ -3,9 +3,11 @@ package com.share.investment.service.impl;
 
 import com.share.investment.model.dao.SentimentAnalysis;
 import com.share.investment.service.SentimentAnalysisService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SentimentServiceAnalysisImpl implements SentimentAnalysisService {
 
     @Override

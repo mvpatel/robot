@@ -2,6 +2,7 @@ package com.share.investment.model.dao;
 
 import lombok.Data;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -62,5 +63,16 @@ public class Investment {
             mappedBy = "investment"
     )
     private Profit profit;
+
+    @OneToOne(
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+            name = "restriction_id",
+            unique = true,
+            nullable = false
+    )
+    private Restriction restriction;
 
 }

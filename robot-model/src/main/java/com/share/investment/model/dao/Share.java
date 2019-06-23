@@ -54,12 +54,12 @@ public class Share {
     )
     private List<Investment> investments;
 
-    @OneToOne(
+    @OneToMany(
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,
             mappedBy = "share"
     )
-    private Restriction restriction;
+    private List<Restriction> restriction;
 
     @OneToMany(
             cascade = CascadeType.ALL,

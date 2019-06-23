@@ -2,9 +2,11 @@ package com.share.investment.service.impl;
 
 import com.share.investment.model.dao.Tweet;
 import com.share.investment.service.TweetService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TweetServiceImpl implements TweetService {
 
     @Override
