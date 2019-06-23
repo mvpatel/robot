@@ -1,7 +1,6 @@
 package com.share.investment.model.dao;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,14 +14,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.List;
 
+@Data
 @Table(
         name = "share"
 )
 @Entity(
         name = "Share"
 )
-@Getter
-@Setter
 public class Share {
 
     @Id
@@ -55,4 +53,19 @@ public class Share {
             mappedBy = "share"
     )
     private List<Investment> investments;
+
+    @OneToOne(
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            mappedBy = "share"
+    )
+    private Restriction restriction;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "share"
+    )
+    private List<Tweet> tweets;
+
 }
