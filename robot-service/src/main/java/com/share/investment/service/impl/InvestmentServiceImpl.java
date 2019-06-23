@@ -11,6 +11,7 @@ import com.share.investment.service.ShareService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Calendar;
 import java.util.List;
 
 @Service
@@ -42,6 +43,7 @@ public class InvestmentServiceImpl implements InvestmentService {
         investment.setStartPrice(price.getPrice());
         investment.setLive((byte) 1);
         investment.setStartSentimentAnalysisScore((byte) 99);
+        investment.setStartDateTime(Calendar.getInstance());
         investmentRepository.save(investment);
         return investment;
     }
@@ -52,8 +54,9 @@ public class InvestmentServiceImpl implements InvestmentService {
         Investment investment = investmentService.getInvestmentByInvestmentId(investmentId);
         Price price = investment.getShare().getPrice();
         investment.setClosePrice(price.getPrice());
-        investment.setLive((byte) 0);
+        investment.setLive((byte) 1);
         investment.setEndSentimentAnalysisScore((byte) 50);
+        investment.setCloseDateTime(Calendar.getInstance());
         investmentRepository.save(investment);
         return investment;
     }

@@ -17,8 +17,8 @@ public class SystemController {
     public void testing() throws MalformedURLException {
         //todo remove
         System.out.println("Testing Method from SystemController.java Start");
-//        investmentService.startInvestment(12L);
-        investmentService.closeInvestment(1L);
+//        investmentService.startInvestment(3L);
+        investmentService.closeInvestment(18L);
 //        todo remove
         System.out.println("Testing Method from SystemController.java End");
 

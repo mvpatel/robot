@@ -11,8 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Calendar;
 
 @Table(
         name = "investment"
@@ -33,9 +35,11 @@ public class Investment {
 
     private BigDecimal closePrice;
 
-    private LocalDateTime startDateTime;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Calendar startDateTime;
 
-    private LocalDateTime closeDateTime;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Calendar closeDateTime;
 
     private byte live;
 
