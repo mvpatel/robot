@@ -35,12 +35,19 @@ public interface PriceService {
      * @param priceId
      * @return
      */
-    List<Price> listPriceByPriceId(Long priceId);
+    Price getPriceByPriceId(Long priceId);
 
     /**
      * List Price by shareId
      * @param shareId
      * @return
      */
-    List<Price> listPriceByShareId(Long shareId);
+    Price getPriceByShareId(Long shareId);
+
+
+    /**
+     *
+     * @param priceId
+     */
+    void deletePrice(Long priceId);
 }

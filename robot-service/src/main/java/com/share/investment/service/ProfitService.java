@@ -1,5 +1,6 @@
 package com.share.investment.service;
 
+import com.share.investment.model.dao.Investment;
 import com.share.investment.model.dao.Profit;
 
 import java.math.BigDecimal;
@@ -11,8 +12,14 @@ public interface ProfitService {
      * Add Profit
      * @return
      */
-    Profit addProfit(Long investmentId, BigDecimal profit);
+    Profit addProfit(Investment investment);
 
+    /**
+     *
+     * @param investment
+     * @return
+     */
+    BigDecimal getProfit(Investment investment);
     /**
      *
      * @return

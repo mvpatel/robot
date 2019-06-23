@@ -1,11 +1,9 @@
 package com.share.investment.service;
 
 import com.share.investment.model.dao.Share;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface ShareService {
 
     /**
@@ -30,7 +28,11 @@ public interface ShareService {
      * It will be used to list all shares by shareId
      * @return
      */
-    List<Share> listShareByShareId(Long shareId);
+    Share getShareByShareId(Long shareId);
 
-
+    /**
+     * Delete Share by shareID
+     * @return
+     */
+    void deleteShare(Long shareId);
 }
