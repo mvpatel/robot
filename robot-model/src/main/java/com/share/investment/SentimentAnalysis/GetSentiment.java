@@ -10,8 +10,6 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 /*
  * Gson: https://github.com/google/gson
@@ -29,28 +27,6 @@ import java.util.List;
  * java -cp .;gson-2.8.1.jar GetSentiment
  */
 
-
-//@todo commented below class check it later on
-class DocumentForSentimentAnalysis {
-    public String id, language, text;
-
-    public DocumentForSentimentAnalysis(String id, String language, String text){
-        this.id = id;
-        this.language = language;
-        this.text = text;
-    }
-}
-
-class DocumentsForSentimentAnalysis {
-    public List<DocumentForSentimentAnalysis> documents;
-
-    public DocumentsForSentimentAnalysis() {
-        this.documents = new ArrayList<DocumentForSentimentAnalysis>();
-    }
-    public void add(String id, String language, String text) {
-        this.documents.add (new DocumentForSentimentAnalysis(id, language, text));
-    }
-}
 
 public class GetSentiment {
 

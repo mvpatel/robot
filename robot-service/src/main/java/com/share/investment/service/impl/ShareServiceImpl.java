@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ShareImpl implements ShareService {
+public class ShareServiceImpl implements ShareService {
 
     @Autowired
     private  ShareRepository shareRepository;

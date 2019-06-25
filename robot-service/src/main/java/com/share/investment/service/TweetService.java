@@ -36,7 +36,7 @@ public interface TweetService {
      * @param tweetId
      * @return
      */
-    List<Tweet> listTweetByTweetId(Long tweetId);
+    Tweet getTweetByTweetId(Long tweetId);
 
     /**
      * It will be used to list all Tweets by shareId

@@ -33,7 +33,7 @@ public class SentimentAnalysis {
     @Column(
             nullable = false
     )
-    private byte score;
+    private Float score;
 
     @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)

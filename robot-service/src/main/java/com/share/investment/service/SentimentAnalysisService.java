@@ -1,6 +1,7 @@
 package com.share.investment.service;
 
 import com.share.investment.model.dao.SentimentAnalysis;
+import com.share.investment.model.dao.Tweet;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface SentimentAnalysisService {
      * Add Sentimental Analysis
      * @return
      */
-    SentimentAnalysis addSentimentAnalysis(Long tweetId, byte score);
+    SentimentAnalysis addSentimentAnalysis(Tweet tweet, Float score);
 
     /**
      * Update Sentimental Analysis

@@ -11,8 +11,6 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 /*
  * Gson: https://github.com/google/gson
@@ -30,25 +28,6 @@ import java.util.List;
  * java -cp .;gson-2.8.1.jar DetectLanguage
  */
 
-class Document {
-    public String id, text;
-
-    public Document(String id, String text){
-        this.id = id;
-        this.text = text;
-    }
-}
-
-class Documents {
-    public List<Document> documents;
-
-    public Documents() {
-        this.documents = new ArrayList<Document>();
-    }
-    public void add(String id, String text) {
-        this.documents.add (new Document (id, text));
-    }
-}
 
 public class DetectLanguage {
 
@@ -71,8 +50,8 @@ public class DetectLanguage {
 
     static String path = "/text/analytics/v2.1/languages";
 
-    public static String GetLanguage (Documents documents) throws Exception {
-        String text = new Gson().toJson(documents);
+    public static String GetLanguage (DocumentsForLanguage documentsForLanguage) throws Exception {
+        String text = new Gson().toJson(documentsForLanguage);
         byte[] encoded_text = text.getBytes("UTF-8");
 
         URL url = new URL(host+path);
@@ -108,12 +87,14 @@ public class DetectLanguage {
 
     public static void main (String[] args) {
         try {
-            Documents documents = new Documents ();
-            documents.add ("1", "This is a document written in English.");
-            documents.add ("2", "Este es un document escrito en Español.");
-            documents.add ("3", "这是一个用中文写的文件");
+            DocumentsForLanguage documentsForLanguage = new DocumentsForLanguage();
+            documentsForLanguage.add ("1", "This is a document written in English.");
+            documentsForLanguage.add ("2", "Este es un document escrito en Español.");
+            documentsForLanguage.add ("3", "这是一个用中文写的文件");
+            documentsForLanguage.add ("4", "Today is not a good day very bad rainy day");
+            documentsForLanguage.add ("5", "I am so excited today, very happy for my life.");
 
-            String response = GetLanguage (documents);
+            String response = GetLanguage (documentsForLanguage);
             System.out.println (prettify (response));
         }
         catch (Exception e) {

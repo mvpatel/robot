@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
 import java.util.Calendar;
 
 @Table(
-        name = "tweet"
+        name = "Tweet"
 )
 @Entity
 @Data
@@ -33,7 +33,6 @@ public class Tweet {
     private Long tweetId;
 
     @Column(
-            unique = true,
             nullable = false
     )
     private Long userId;
