@@ -39,6 +39,10 @@ public class Tweet {
 
     private String tweetString;
 
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Calendar tweetDateTime;
+
     @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar dateTime;

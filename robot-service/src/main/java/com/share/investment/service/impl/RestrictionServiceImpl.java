@@ -55,4 +55,9 @@ public class RestrictionServiceImpl implements RestrictionService {
     public List<Restriction> listRestrictionByShareId(Long shareId) {
         return null;
     }
+
+    @Override
+    public Restriction getRestrictionByRestrictionID(Long restrictionId) {
+        return restrictionRepository.findOne(restrictionId);
+    }
 }

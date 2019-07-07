@@ -44,4 +44,6 @@ public interface RestrictionService {
      * @return
      */
     List<Restriction>listRestrictionByShareId(Long shareId);
+
+    Restriction getRestrictionByRestrictionID(Long restrictionId);
 }

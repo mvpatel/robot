@@ -8,6 +8,7 @@ import com.share.investment.repository.ShareRepository;
 import com.share.investment.service.InvestmentService;
 import com.share.investment.service.PriceService;
 import com.share.investment.service.ProfitService;
+import com.share.investment.service.RestrictionService;
 import com.share.investment.service.ShareService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,8 +37,11 @@ public class InvestmentServiceImpl implements InvestmentService {
     @Autowired
     ProfitService profitService;
 
+    @Autowired
+    RestrictionService restrictionService;
+
     @Override
-    public Investment startInvestment(Long shareId) {
+    public Investment startInvestment(Long shareId, Long restrictionId) {
 
         Share share = shareService.getShareByShareId(shareId);
         Price price = share.getPrice();
@@ -48,6 +52,8 @@ public class InvestmentServiceImpl implements InvestmentService {
         investment.setLive((byte) 1);
         investment.setStartSentimentAnalysisScore((byte) 99);
         investment.setStartDateTime(Calendar.getInstance());
+        //todo getting Restriction is not working
+//        investment.setRestriction(restrictionService.getRestrictionByRestrictionID(restrictionId));
         investmentRepository.save(investment);
         return investment;
     }

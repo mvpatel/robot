@@ -2,18 +2,21 @@ package com.share.investment.service;
 
 import com.share.investment.model.dao.Tweet;
 
+import java.util.Calendar;
 import java.util.List;
 
 public interface TweetService {
 
     /**
-     * It will be used to add Tweet
-     * @param userId
-     * @param tweet
-     * @param shareId
-     * @return
+     * It will be used to add Tweet in the tweet table.
+     * @param userId : Tweet api will return user id for each tweet so this will be saved in database for
+     *               future use.
+     * @param tweet: Normal texts for the tweet which will be taken from the Twitter.
+     * @param shareId: twitter table is connected with share table by ManyToOne Relationship so share
+     *               id will be id of the share table
+     * @return: Tweet class object will be returned by this method.
      */
-    Tweet addTweet(Long userId, String tweet, Long shareId);
+    Tweet addTweet(Long userId, String tweet, Long shareId, Calendar tweetDateTime);
 
     /**
      * It will be used to update the Tweet by given parameters.
@@ -23,7 +26,7 @@ public interface TweetService {
      * @param shareId
      * @return
      */
-    Tweet updateTweet(Long tweetId, Long userId, String tweet, Long shareId);
+    Tweet updateTweet(Long tweetId, Long userId, String tweet, Long shareId, Calendar tweetDateTime);
 
     /**
      * It will be used to list all Tweets
@@ -44,4 +47,10 @@ public interface TweetService {
      * @return
      */
     List<Tweet> listTweetByShareId(Long shareId);
+
+    List<Tweet> getNotAnalysedTweets();
+
+    String getTwitterAPIData();
+
+    String getTwitterAPICallbackDATA();
 }

@@ -16,6 +16,12 @@
 	<packaging>pom</packaging>
 	<description>Demo project for Spring Boot</description>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<springfox.version>2.7.0</springfox.version>
+	</properties>
+
 	<modules>
 		<module>robot-model</module>
 		<module>robot-repository</module>
@@ -61,6 +67,17 @@
 			<version>3.1.0</version>
 		</dependency>
 
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
 	</dependencies>
 
 

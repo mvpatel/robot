@@ -1,13 +1,12 @@
+/Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/SentimentAnalysis/DocumentsForLanguage.java
 /Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/SentimentAnalysis/GetSentiment.java
 /Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/SentimentAnalysis/DetectLanguage.java
 /Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/model/dao/Tweet.java
+/Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/model/dao/Share.java
 /Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/model/dao/Price.java
-/Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/financeAPI/financeAPIIEXCloudClient.java
 /Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/model/dao/SentimentAnalysis.java
 /Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/model/dao/Profit.java
+/Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/SentimentAnalysis/DocumentsForSentimentAnalysis.java
 /Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/model/dao/Restriction.java
-/Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/robot/RobotApplication.java
-/Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/financeAPI/IEXCloudClient.java
-/Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/model/dao/Share.java
 /Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/model/dao/Investment.java
-/Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/financeAPI/FinanaceAPIfinancialmodelingprep.java
+/Users/mayankpatel/private/University/robot/robot-model/src/main/java/com/share/investment/robot/RobotApplication.java

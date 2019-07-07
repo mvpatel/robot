@@ -12,7 +12,7 @@ public interface InvestmentService {
      * @param shareId
      * @return
      */
-    Investment startInvestment(Long shareId);
+    Investment startInvestment(Long shareId, Long restrictionId);
 
     /**
      * Update Investment

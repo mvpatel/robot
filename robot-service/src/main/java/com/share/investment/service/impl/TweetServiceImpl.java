@@ -7,6 +7,7 @@ import com.share.investment.service.TweetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Calendar;
 import java.util.List;
 
 @Service
@@ -19,17 +20,18 @@ public class TweetServiceImpl implements TweetService {
     ShareRepository shareRepository;
 
     @Override
-    public Tweet addTweet(Long userId, String tweetString, Long shareId) {
+    public Tweet addTweet(Long userId, String tweetString, Long shareId, Calendar tweetDateTime) {
         Tweet tweet = new Tweet();
         tweet.setShare(shareRepository.findOne(shareId));
         tweet.setTweetString(tweetString);
         tweet.setUserId(userId);
+        tweet.setTweetDateTime(tweetDateTime);
         tweetRepository.save(tweet);
         return tweet;
     }
 
     @Override
-    public Tweet updateTweet(Long tweetId, Long userId, String tweet, Long shareId) {
+    public Tweet updateTweet(Long tweetId, Long userId, String tweet, Long shareId, Calendar tweetDateTime) {
         return null;
     }
 
@@ -47,5 +49,22 @@ public class TweetServiceImpl implements TweetService {
     @Override
     public List<Tweet> listTweetByShareId(Long shareId) {
         return null;
+    }
+
+    @Override
+    public List<Tweet> getNotAnalysedTweets() {
+        return tweetRepository.getNotAnalysedTweets();
+    }
+
+    @Override
+    public String getTwitterAPIData() {
+        String result = "Twitter API Data";
+        return  result;
+    }
+
+    @Override
+    public String getTwitterAPICallbackDATA() {
+        String result = "Twitter Call back API";
+        return result;
     }
 }

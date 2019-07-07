@@ -28,28 +28,20 @@ public class SentimentAnalysisAPIServiceImpl implements SentimentAnalysisAPIServ
 
     @Override
     public void updateScoreBySentimentAnalysisAPI() {
-        String id, languageCode, text;
-        id = "1";
-        text = "This is a document written in English.";
+        String tweetId, languageCode, tweetString;
 
-        List<Tweet> notAnalysedTweets = getNotAnalysedTweets();
+        List<Tweet> notAnalysedTweets = tweetService.getNotAnalysedTweets();
 
-        //todo for loop for all tweets
-        // add below code in the loop
+        for (Tweet tweet : notAnalysedTweets) {
+            tweetId = tweet.getTweetId().toString();
+            tweetString = tweet.getTweetString();
 
-        languageCode = getLanguageCodeByAPI(id, text);
+            languageCode = getLanguageCodeByAPI(tweetId, tweetString);
+            Float sentimentScore = getSentimentAnalysisScoreByAPI(tweetId, languageCode, tweetString);
+            sentimentAnalysisService.addSentimentAnalysis(tweet, sentimentScore);
+        }
 
-        getSentimentAnalysisScoreByAPI(id, languageCode, text);
-
-        Float sentimentScore = getSentimentAnalysisScoreByAPI(id, languageCode, text);
-
-        sentimentAnalysisService.addSentimentAnalysis(tweetService.getTweetByTweetId(25L), sentimentScore);
     }
-
-    private List<Tweet> getNotAnalysedTweets() {
-        return null;
-    }
-
 
     private String getLanguageCodeByAPI(String id, String text) {
 
