@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import twitter4j.TwitterException;
 
 import java.net.MalformedURLException;
 import java.util.Calendar;
@@ -40,7 +41,7 @@ public class SystemController {
             value = "/get-twitter-data",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public String getTwitterAPIData() {
+    public String getTwitterAPIData() throws TwitterException {
 
         return this.tweetService.getTwitterAPIData();
     }
@@ -58,7 +59,10 @@ public class SystemController {
         return this.tweetService.getTwitterAPICallbackDATA();
     }
 
-    public void testing() throws MalformedURLException {
+    public void testing() throws MalformedURLException, TwitterException {
+
+        this.tweetService.getTwitterAPIData();
+
         System.out.println("Testing is called");
 //        investmentService.startInvestment(1L, 33L);
 //        investmentService.closeInvestment(18L);

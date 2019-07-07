@@ -1,6 +1,7 @@
 package com.share.investment.service;
 
 import com.share.investment.model.dao.Tweet;
+import twitter4j.TwitterException;
 
 import java.util.Calendar;
 import java.util.List;
@@ -50,7 +51,7 @@ public interface TweetService {
 
     List<Tweet> getNotAnalysedTweets();
 
-    String getTwitterAPIData();
+    String getTwitterAPIData() throws TwitterException;
 
     String getTwitterAPICallbackDATA();
 }

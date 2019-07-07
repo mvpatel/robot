@@ -6,9 +6,16 @@ import com.share.investment.repository.TweetRepository;
 import com.share.investment.service.TweetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import twitter4j.Query;
+import twitter4j.QueryResult;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+import twitter4j.conf.ConfigurationBuilder;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TweetServiceImpl implements TweetService {
@@ -57,7 +64,9 @@ public class TweetServiceImpl implements TweetService {
     }
 
     @Override
-    public String getTwitterAPIData() {
+    public String getTwitterAPIData() throws TwitterException {
+
+        List<String> serachedTweet = getSearchedTweets();
         String result = "Twitter API Data";
         return  result;
     }
@@ -66,5 +75,28 @@ public class TweetServiceImpl implements TweetService {
     public String getTwitterAPICallbackDATA() {
         String result = "Twitter Call back API";
         return result;
+    }
+
+    private Twitter getTwitterInstance() {
+        ConfigurationBuilder cb = new ConfigurationBuilder();
+        cb.setDebugEnabled(true)
+                .setOAuthConsumerKey("PoOUDSZ6YxBajLkCQuev3CsN0")
+                .setOAuthConsumerSecret("hltlggHI3Afyx7KbFAFH5KiEWH7J7kzz9v94OZQhQe4QGF27LM")
+                .setOAuthAccessToken("515230950-owmZ2y8DS7aAYC7mQDrjPDw5Dvc8poAQ2VW9d8rH")
+                .setOAuthAccessTokenSecret("F7uG7gSB4qApBvJ191eJuGPtLWTuFQ3hVoaOauDdAmccS");
+        TwitterFactory tf = new TwitterFactory(cb.build());
+        Twitter twitter = tf.getInstance();
+        return  twitter;
+    }
+
+    private List<String> getSearchedTweets() throws TwitterException {
+
+        Twitter twitter = getTwitterInstance();
+        Query query = new Query("google");
+        QueryResult result = twitter.search(query);
+
+        return result.getTweets().stream()
+                .map(item -> item.getText())
+                .collect(Collectors.toList());
     }
 }
