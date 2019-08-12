@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
- * Base configuration for teh System, handles configuration of SpringBoot  .
+ * Base configuration for the System, handles configuration of SpringBoot  .
  */
 @Configuration
 @EnableAutoConfiguration

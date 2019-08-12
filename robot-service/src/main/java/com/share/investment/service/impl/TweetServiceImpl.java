@@ -67,7 +67,14 @@ public class TweetServiceImpl implements TweetService {
     public String getTwitterAPIData() throws TwitterException {
 
         List<String> serachedTweet = getSearchedTweets();
+        for(String tweet : serachedTweet) {
+            System.out.println(tweet);
+        }
+        System.out.println("######################################  Start Printing Tweets ####################");
+        System.out.println(serachedTweet);
+        System.out.println("######################################  End Printing Tweets ####################");
         String result = "Twitter API Data";
+
         return  result;
     }
 
@@ -92,7 +99,7 @@ public class TweetServiceImpl implements TweetService {
     private List<String> getSearchedTweets() throws TwitterException {
 
         Twitter twitter = getTwitterInstance();
-        Query query = new Query("google");
+        Query query = new Query("has: $msft");
         QueryResult result = twitter.search(query);
 
         return result.getTweets().stream()
